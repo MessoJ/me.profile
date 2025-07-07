@@ -2,16 +2,13 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
-import { Calendar, Clock, ArrowRight, Eye, BookOpen, Search, Filter, Share2, Bookmark, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Calendar, Clock, ArrowRight, Eye, BookOpen, Search, Filter, Share2, Bookmark } from 'lucide-react';
 
 const Blog = () => {
   const [hoveredPost, setHoveredPost] = useState(null);
   const [selectedPost, setSelectedPost] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
-  const [showAllPosts, setShowAllPosts] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 6;
 
   const blogPosts = [
     {
@@ -44,7 +41,7 @@ The future of business automation lies in creating seamless partnerships between
       readTime: "8 min read",
       views: "197",
       category: "Machine Learning",
-      image: "/ai-agent.jpeg",
+      image: "ai-agent.jpeg",
       tags: ["ML", "Automation", "Business", "AI"]
     },
     {
@@ -91,7 +88,7 @@ Remember: A pipeline that runs in production is worth ten that work perfectly in
       readTime: "12 min read",
       views: "157",
       category: "Data Engineering",
-      image: "/Data-Pipelines.jpg",
+      image: "Data-Pipelines.jpg",
       tags: ["Python", "Data Engineering", "ETL", "Pipeline"]
     },
     {
@@ -141,411 +138,8 @@ And please, for the love of all that is good in this world, stop using 3D pie ch
       readTime: "7 min read",
       views: "87",
       category: "Data Visualization",
-      image: "/Data-Viz.png",
+      image: "Data-Viz.png",
       tags: ["Data Viz", "ML", "Communication", "Analytics"]
-    },
-    {
-      id: 4,
-      slug: "deep-learning-production-lessons",
-      title: "Deep Learning in Production: Lessons from the Trenches",
-      excerpt: "Real-world insights from deploying deep learning models at scale. From model serving to monitoring, here's what actually works in production environments.",
-      content: `# Deep Learning in Production: Lessons from the Trenches
-
-After deploying dozens of deep learning models into production, I've learned that the gap between a working prototype and a production-ready system is vast. Here are the hard-earned lessons that can save you months of headaches.
-
-## The Production Reality Check
-
-Your model works perfectly in Jupyter notebooks, achieves great accuracy on test sets, and everyone's excited. Then production happens. Suddenly you're dealing with:
-
-- **Model drift**: Performance degrades over time
-- **Latency requirements**: Your 30-second inference isn't acceptable
-- **Memory constraints**: That 8GB model won't fit on your edge device
-- **Data quality issues**: Real-world data is messier than your clean datasets
-
-## Critical Production Considerations
-
-### 1. Model Serving Architecture
-
-Choose your serving strategy based on your requirements:
-
-- **Batch processing**: For non-real-time predictions
-- **Real-time APIs**: For immediate responses
-- **Edge deployment**: For low-latency, offline scenarios
-
-### 2. Monitoring is Everything
-
-You can't manage what you don't measure:
-- Track prediction confidence scores
-- Monitor input data distributions
-- Set up alerts for performance degradation
-- Log prediction requests for later analysis
-
-### 3. Model Versioning and Rollback
-
-Always have a rollback plan:
-- Version your models and training data
-- A/B test new model versions
-- Keep champion/challenger model setups
-- Automate rollback triggers
-
-## Performance Optimization Techniques
-
-### Model Optimization
-- **Quantization**: Reduce model size by 4x with minimal accuracy loss
-- **Pruning**: Remove unnecessary connections
-- **Knowledge distillation**: Train smaller student models
-- **ONNX conversion**: Standardize model formats for deployment
-
-### Infrastructure Optimization
-- **GPU batching**: Process multiple requests together
-- **Model caching**: Cache frequent predictions
-- **Asynchronous processing**: Don't block on model inference
-- **Load balancing**: Distribute requests across model instances
-
-## The Human Factor
-
-Remember that ML systems are socio-technical systems:
-- Train your team on model limitations
-- Set up feedback loops with end users
-- Document model assumptions and edge cases
-- Plan for model maintenance and updates
-
-## Key Takeaways
-
-1. **Start simple**: Deploy a basic model first, then iterate
-2. **Measure everything**: You can't improve what you don't track
-3. **Plan for failure**: Models will fail, be ready
-4. **Optimize for maintenance**: Your future self will thank you
-
-The difference between a successful ML project and a failed one often comes down to operational excellence, not just model accuracy.`,
-      date: "2024-12-05",
-      readTime: "10 min read",
-      views: "234",
-      category: "Machine Learning",
-      image: "/Deep-Learning.avif",
-      tags: ["Deep Learning", "MLOps", "Production", "Deployment"]
-    },
-    {
-      id: 5,
-      slug: "nlp-real-world-text-processing",
-      title: "NLP in the Wild: Real-World Text Processing Challenges",
-      excerpt: "From sentiment analysis to named entity recognition, explore the practical challenges and solutions in processing messy, real-world text data.",
-      content: `# NLP in the Wild: Real-World Text Processing Challenges
-
-Natural Language Processing sounds straightforward in academic papers, but real-world text data is a different beast entirely. Here's what I've learned from processing millions of documents in production systems.
-
-## The Messy Reality of Text Data
-
-Real-world text data comes with surprises:
-
-### Character Encoding Nightmares
-- Mixed encodings in the same dataset
-- Special characters that break your pipeline
-- Invisible Unicode characters
-- Legacy system artifacts
-
-### Language Detection Challenges
-- Code-switching within documents
-- Informal language and slang
-- Domain-specific terminology
-- Multilingual content
-
-### Data Quality Issues
-- OCR errors from scanned documents
-- HTML entities and markup remnants
-- Duplicate content detection
-- Incomplete or truncated text
-
-## Preprocessing Pipeline Strategies
-
-### 1. Robust Text Cleaning
-\`\`\`python
-def clean_text(text):
-    # Handle encoding issues
-    text = text.encode('utf-8', errors='ignore').decode('utf-8')
-    
-    # Remove HTML entities
-    text = html.unescape(text)
-    
-    # Normalize whitespace
-    text = re.sub(r'\\s+', ' ', text)
-    
-    return text.strip()
-\`\`\`
-
-### 2. Language Detection and Handling
-- Use multiple detection libraries for consensus
-- Set confidence thresholds
-- Handle mixed-language content appropriately
-- Fall back to language-agnostic methods
-
-### 3. Text Normalization
-- Standardize date formats
-- Normalize numerical expressions
-- Handle abbreviations and acronyms
-- Expand contractions consistently
-
-## Advanced Processing Techniques
-
-### Named Entity Recognition (NER)
-Real-world NER requires:
-- Domain-specific entity types
-- Handling of nested entities
-- Confidence scoring
-- Custom training data
-
-### Sentiment Analysis Challenges
-- Sarcasm and irony detection
-- Context-dependent sentiment
-- Domain-specific sentiment patterns
-- Handling neutral or mixed sentiment
-
-### Information Extraction
-- Template-based extraction
-- Machine learning approaches
-- Hybrid systems combining both
-- Validation and quality control
-
-## Performance and Scalability
-
-### Processing Large Volumes
-- Streaming text processing
-- Distributed computing with Spark
-- Memory-efficient algorithms
-- Caching frequent operations
-
-### Model Selection Trade-offs
-- Accuracy vs. speed considerations
-- Memory usage constraints
-- Update frequency requirements
-- Interpretability needs
-
-## Quality Assurance in NLP
-
-### Validation Strategies
-- Human-in-the-loop validation
-- Inter-annotator agreement
-- Active learning for sample selection
-- Continuous monitoring of outputs
-
-### Error Analysis
-- Systematic categorization of errors
-- Root cause analysis
-- Performance by data segments
-- Feedback loop implementation
-
-## Practical Tips for Success
-
-1. **Start with data exploration**: Understand your text before processing
-2. **Build robust pipelines**: Handle edge cases gracefully
-3. **Validate early and often**: Catch issues before they compound
-4. **Monitor in production**: Text data patterns change over time
-5. **Document everything**: Future you will thank current you
-
-## Common Pitfalls to Avoid
-
-- Assuming clean, well-formatted input
-- Over-engineering preprocessing pipelines
-- Ignoring domain-specific nuances
-- Not planning for data drift
-- Underestimating annotation costs
-
-Remember: Perfect is the enemy of good in production NLP. Build systems that handle 95% of cases well rather than trying to solve every edge case.`,
-      date: "2024-11-28",
-      readTime: "12 min read",
-      views: "189",
-      category: "Machine Learning",
-      image: "/nlp.png",
-      tags: ["NLP", "Text Processing", "Machine Learning", "Data Engineering"]
-    },
-    {
-      id: 6,
-      slug: "real-time-data-pipelines-kafka",
-      title: "Building Real-Time Data Pipelines with Apache Kafka",
-      excerpt: "A comprehensive guide to designing and implementing real-time data pipelines using Apache Kafka for high-throughput, low-latency data processing.",
-      content: `# Building Real-Time Data Pipelines with Apache Kafka
-
-Real-time data processing has become essential for modern applications. Whether you're building recommendation engines, fraud detection systems, or real-time analytics dashboards, Apache Kafka provides the foundation for reliable, scalable streaming data pipelines.
-
-## Why Kafka for Real-Time Pipelines?
-
-### Key Advantages
-- **High throughput**: Handle millions of messages per second
-- **Low latency**: Sub-millisecond message delivery
-- **Fault tolerance**: Built-in replication and recovery
-- **Scalability**: Horizontal scaling without downtime
-- **Durability**: Persistent message storage
-
-### Common Use Cases
-- Event streaming and processing
-- Log aggregation and analysis
-- Real-time ETL and data integration
-- Microservices communication
-- Change data capture (CDC)
-
-## Pipeline Architecture Patterns
-
-### 1. Lambda Architecture
-- **Batch layer**: Historical data processing
-- **Speed layer**: Real-time stream processing
-- **Serving layer**: Query interface for both layers
-
-### 2. Kappa Architecture
-- **Stream-only processing**: Single pipeline for all data
-- **Event sourcing**: Store events as immutable facts
-- **Materialized views**: Derive state from event streams
-
-### 3. Event-Driven Architecture
-- **Event producers**: Generate business events
-- **Event streams**: Kafka topics for event distribution
-- **Event consumers**: React to events and update state
-
-## Implementation Best Practices
-
-### Producer Configuration
-\`\`\`python
-from kafka import KafkaProducer
-import json
-
-producer = KafkaProducer(
-    bootstrap_servers=['kafka1:9092', 'kafka2:9092'],
-    value_serializer=lambda v: json.dumps(v).encode('utf-8'),
-    # Reliability settings
-    acks='all',
-    retries=3,
-    # Performance settings
-    batch_size=16384,
-    linger_ms=10,
-    compression_type='gzip'
-)
-\`\`\`
-
-### Consumer Configuration
-\`\`\`python
-from kafka import KafkaConsumer
-
-consumer = KafkaConsumer(
-    'user-events',
-    bootstrap_servers=['kafka1:9092', 'kafka2:9092'],
-    group_id='analytics-group',
-    # Offset management
-    auto_offset_reset='earliest',
-    enable_auto_commit=False,
-    # Performance tuning
-    fetch_min_bytes=1024,
-    max_poll_records=500
-)
-\`\`\`
-
-### Topic Design Strategies
-
-#### Partitioning Strategy
-- **By key**: Maintain order within partitions
-- **Round-robin**: Distribute load evenly
-- **Custom partitioner**: Business logic-based routing
-
-#### Retention Policies
-- **Time-based**: Delete after X days
-- **Size-based**: Delete when topic exceeds size limit
-- **Compaction**: Keep only latest value per key
-
-## Stream Processing Frameworks
-
-### Apache Kafka Streams
-- **Lightweight**: Runs within your application
-- **Exactly-once semantics**: Guaranteed message processing
-- **State stores**: Local state management
-- **Interactive queries**: Query application state
-
-### Apache Flink
-- **Low latency**: Sub-second processing
-- **Checkpointing**: Fault-tolerant state management
-- **Complex event processing**: Pattern detection
-- **SQL support**: Stream processing with SQL
-
-### Spark Structured Streaming
-- **Micro-batch processing**: Near real-time processing
-- **Integration**: Works with existing Spark ecosystem
-- **Multiple sinks**: Output to various destinations
-- **Watermarking**: Handle late-arriving data
-
-## Monitoring and Operations
-
-### Key Metrics to Track
-- **Throughput**: Messages per second
-- **Latency**: End-to-end message processing time
-- **Consumer lag**: How far behind consumers are
-- **Error rates**: Failed message processing
-- **Resource utilization**: CPU, memory, disk usage
-
-### Operational Considerations
-- **Cluster sizing**: Plan for peak load with headroom
-- **Replication factor**: Balance availability and storage costs
-- **Security**: Authentication, authorization, encryption
-- **Backup and recovery**: Cross-datacenter replication
-
-## Common Pitfalls and Solutions
-
-### 1. Consumer Lag
-**Problem**: Consumers can't keep up with producers
-**Solutions**:
-- Increase consumer instances
-- Optimize processing logic
-- Use parallel processing within consumers
-- Consider message batching
-
-### 2. Poison Messages
-**Problem**: Malformed messages break consumers
-**Solutions**:
-- Implement dead letter queues
-- Add message validation
-- Use error handling strategies
-- Monitor message formats
-
-### 3. Exactly-Once Processing
-**Problem**: Duplicate or lost messages
-**Solutions**:
-- Use idempotent consumers
-- Implement transactional processing
-- Design for at-least-once with deduplication
-- Leverage Kafka transactions
-
-## Performance Optimization
-
-### Producer Optimization
-- Batch messages for better throughput
-- Use appropriate compression
-- Tune network buffer sizes
-- Implement async processing
-
-### Consumer Optimization
-- Process messages in parallel
-- Commit offsets in batches
-- Use appropriate fetch sizes
-- Implement back-pressure handling
-
-### Infrastructure Tuning
-- SSD storage for better I/O performance
-- Adequate network bandwidth
-- Proper JVM heap sizing
-- OS-level optimizations
-
-## Getting Started Checklist
-
-1. **Design your topics**: Plan partitioning and retention
-2. **Set up monitoring**: Track key metrics from day one
-3. **Start simple**: Begin with basic producers and consumers
-4. **Test failure scenarios**: Verify fault tolerance
-5. **Optimize incrementally**: Measure before optimizing
-6. **Document everything**: Schema, configurations, and procedures
-
-Real-time data pipelines with Kafka can transform your organization's ability to respond to events as they happen. Start with a solid foundation, monitor everything, and scale incrementally based on actual needs.`,
-      date: "2024-11-20",
-      readTime: "15 min read",
-      views: "312",
-      category: "Data Engineering",
-      image: "/Data-Pipelines.jpg",
-      tags: ["Kafka", "Real-time", "Data Engineering", "Streaming", "ETL"]
     }
   ];
 
@@ -559,15 +153,6 @@ Real-time data pipelines with Kafka can transform your organization's ability to
     return matchesCategory && matchesSearch;
   });
 
-  // Pagination logic
-  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
-  const startIndex = (currentPage - 1) * postsPerPage;
-  const endIndex = startIndex + postsPerPage;
-  const paginatedPosts = filteredPosts.slice(startIndex, endIndex);
-  
-  // Display logic for main blog view
-  const displayPosts = showAllPosts ? paginatedPosts : filteredPosts.slice(0, 3);
-
   const handlePostClick = (post) => {
     setSelectedPost(post);
   };
@@ -576,26 +161,10 @@ Real-time data pipelines with Kafka can transform your organization's ability to
     setSelectedPost(null);
   };
 
-  const handleViewAllPosts = () => {
-    setShowAllPosts(true);
-    setCurrentPage(1);
-  };
-
-  const handleBackToBlogOverview = () => {
-    setShowAllPosts(false);
-    setCurrentPage(1);
-  };
-
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-    // Scroll to top of blog section
-    document.getElementById('blog')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   const sharePost = (post) => {
-    const url = `${window.location.origin}#blog/${post.slug}`;
+    const url = `${window.location.origin}#blog`;
     navigator.clipboard.writeText(url);
-    alert(`Blog post "${post.title}" URL copied to clipboard!`);
+    alert('Blog post URL copied to clipboard!');
   };
 
   const getCategoryColor = (category) => {
@@ -652,7 +221,7 @@ Real-time data pipelines with Kafka can transform your organization's ability to
             {/* Hero image */}
             <div className="relative h-80 overflow-hidden">
               <img 
-                src={selectedPost.image} 
+                src={`${process.env.PUBLIC_URL}/${selectedPost.image}`} 
                 alt={selectedPost.title}
                 className="w-full h-full object-cover"
               />
@@ -720,7 +289,7 @@ Real-time data pipelines with Kafka can transform your organization's ability to
                   >
                     <div className="relative overflow-hidden">
                       <img 
-                        src={post.image} 
+                        src={`${process.env.PUBLIC_URL}/${post.image}`} 
                         alt={post.title}
                         className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
                       />
@@ -759,20 +328,15 @@ Real-time data pipelines with Kafka can transform your organization's ability to
           <div className="flex items-center justify-center gap-2 mb-6">
             <BookOpen className="w-6 h-6 text-blue-600" />
             <Badge variant="outline" className="px-4 py-2 text-sm font-medium border-blue-200 text-blue-700 bg-blue-50">
-              {showAllPosts ? 'All Articles' : 'Latest Insights'}
+              Latest Insights
             </Badge>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            {showAllPosts ? 'All' : 'From the'}
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent"> 
-              {showAllPosts ? ' Articles' : ' Blog'}
-            </span>
+            From the 
+            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent"> Blog</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            {showAllPosts 
-              ? `Browse all ${filteredPosts.length} articles on machine learning, data science, and engineering`
-              : 'Sharing knowledge, insights, and best practices in machine learning and data science'
-            }
+            Sharing knowledge, insights, and best practices in machine learning and data science
           </p>
         </div>
 
@@ -809,7 +373,7 @@ Real-time data pipelines with Kafka can transform your organization's ability to
 
         {/* Blog Posts Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {displayPosts.map((post, index) => (
+          {filteredPosts.map((post, index) => (
             <Card 
               key={post.id} 
               className="group hover:shadow-2xl hover:shadow-blue-100/20 transition-all duration-500 cursor-pointer overflow-hidden border-0 bg-white/80 backdrop-blur-sm dark:bg-slate-800/80 hover:-translate-y-2"
@@ -819,7 +383,7 @@ Real-time data pipelines with Kafka can transform your organization's ability to
             >
               <div className="relative overflow-hidden">
                 <img 
-                  src={post.image} 
+                  src={`${process.env.PUBLIC_URL}/${post.image}`} 
                   alt={post.title}
                   className="w-full h-52 object-cover object-center group-hover:scale-110 transition-transform duration-500"
                 />
@@ -885,77 +449,18 @@ Real-time data pipelines with Kafka can transform your organization's ability to
           </div>
         )}
 
-        {/* Pagination and View All Posts Controls */}
-        {showAllPosts ? (
-          <div className="space-y-8">
-            {/* Pagination */}
-            {totalPages > 1 && (
-              <div className="flex justify-center items-center space-x-2">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => handlePageChange(currentPage - 1)}
-                  disabled={currentPage === 1}
-                  className="flex items-center gap-2"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                  Previous
-                </Button>
-                
-                <div className="flex space-x-1">
-                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                    <Button
-                      key={page}
-                      variant={currentPage === page ? "default" : "outline"}
-                      size="sm"
-                      onClick={() => handlePageChange(page)}
-                      className="w-10 h-10"
-                    >
-                      {page}
-                    </Button>
-                  ))}
-                </div>
-                
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => handlePageChange(currentPage + 1)}
-                  disabled={currentPage === totalPages}
-                  className="flex items-center gap-2"
-                >
-                  Next
-                  <ChevronRight className="w-4 h-4" />
-                </Button>
-              </div>
-            )}
-            
-            {/* Back to Blog Overview */}
-            <div className="text-center">
-              <Button 
-                variant="outline" 
-                size="lg"
-                onClick={handleBackToBlogOverview}
-                className="px-12 py-4 text-lg font-semibold border-2 border-blue-200 text-blue-700 hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                <ArrowRight className="w-5 h-5 mr-2 rotate-180" />
-                Back to Blog Overview
-              </Button>
-            </div>
-          </div>
-        ) : (
-          <div className="text-center">
-            <Button 
-              variant="outline" 
-              size="lg"
-              onClick={handleViewAllPosts}
-              className="px-12 py-4 text-lg font-semibold border-2 border-blue-200 text-blue-700 hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              <BookOpen className="w-5 h-5 mr-2" />
-              View All {filteredPosts.length} Posts
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </div>
-        )}
+        <div className="text-center">
+          <Button 
+            variant="outline" 
+            size="lg"
+            onClick={() => alert('Full blog functionality will be implemented with backend integration')}
+            className="px-12 py-4 text-lg font-semibold border-2 border-blue-200 text-blue-700 hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            <BookOpen className="w-5 h-5 mr-2" />
+            View All Posts
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Button>
+        </div>
       </div>
     </section>
   );
