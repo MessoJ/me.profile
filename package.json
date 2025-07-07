@@ -2,7 +2,7 @@
     "name": "frontend",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://mesof.github.io/me.profile",
+    "homepage": "https://messoj.github.io/me.profile",
     "dependencies": {
         "@hookform/resolvers": "^5.0.1",
         "@radix-ui/react-accordion": "^1.2.8",
