@@ -59,7 +59,7 @@
     },
     "scripts": {
         "start": "craco start",
-        "build": "craco build",
+        "build": "PUBLIC_URL=/me.profile craco build",
         "test": "craco test",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d build"
