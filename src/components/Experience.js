@@ -243,7 +243,9 @@ const Experience = () => {
                         <p className="text-blue-100 font-medium">{item.institution}</p>
                       </div>
                     </div>
-                    {item.logo === process.env.PUBLIC_URL + '/udacitylogo.png' ? (
+                    {item.logo === process.env.PUBLIC_URL + '/udacitylogo.png' &&
+                     item.institution === 'Udacity' &&
+                     item.degree === 'AWS Machine Learning Fundamentals' ? (
                       <div className="w-12 h-12 flex items-center justify-center">
                         <Aws className="w-10 h-10" style={{ color: 'black' }} />
                       </div>
