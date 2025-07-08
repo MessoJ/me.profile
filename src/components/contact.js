@@ -33,21 +33,35 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Mock form submission
-    setTimeout(() => {
+
+    try {
+      const response = await fetch('https://your-vercel-app.vercel.app/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for your message. I'll get back to you soon!",
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        toast({
+          title: "Error",
+          description: "There was a problem sending your message. Please try again later.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
       toast({
-        title: "Message Sent!",
-        description: "Thank you for your message. I'll get back to you soon!",
+        title: "Error",
+        description: "There was a problem sending your message. Please try again later.",
+        variant: "destructive",
       });
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-      setIsSubmitting(false);
-    }, 1000);
+    }
+    setIsSubmitting(false);
   };
 
   const contactInfo = [
