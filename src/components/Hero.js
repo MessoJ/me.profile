@@ -41,7 +41,7 @@ const Hero = () => {
       {/* Content */}
       <div className="max-w-4xl mx-auto flex flex-col items-center z-20">
         <img
-          src="/profile.jpg"
+          src={process.env.PUBLIC_URL + '/profile.jpg'}
           alt="Meso Francis"
           className="w-40 h-40 rounded-full shadow-lg mb-8 object-cover border-4 border-white"
         />

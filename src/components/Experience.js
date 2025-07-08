@@ -20,7 +20,7 @@ const Experience = () => {
         "Gave away a Fortune 500-grade prediction engine (Open-sourced our churn detector because great tools should be shared, not hoarded!)"
       ],
       technologies: ["Python", "React.js", "XGBoost", "LightGBM", "Docker", "FastAPI", "AWS", "GitHub Actions", "REST/GraphQL APIs", "PostgreSQL", "BigQuery"],
-      companyLogo: "/freel.png",
+      companyLogo: process.env.PUBLIC_URL + '/freel.png',
       current: true
     },
     {
@@ -37,7 +37,7 @@ const Experience = () => {
         "Became the 'translator' between tech and business (Partnered with engineers and consultants to transform technical magic into client strategies. Played key roles in 3+ projects where data directly shaped business roadmaps.)"
       ],
       technologies: ["Python", "R", "SQL", "Tableau", "Machine Learning", "Statistical Analysis"],
-      companyLogo: "/Accenture-Logo.png",
+      companyLogo: process.env.PUBLIC_URL + '/Accenture-Logo.png',
       current: false
     }
   ];
@@ -50,7 +50,7 @@ const Experience = () => {
       duration: "2020 - 2024",
       achievement: "Graduated Cum Laude (GPA: 3.7/4.0)",
       type: "degree",
-      logo: "/UoNlogo.png"
+      logo: process.env.PUBLIC_URL + '/UoNlogo.png'
     },
     {
       institution: "Udacity",
@@ -59,7 +59,7 @@ const Experience = () => {
       duration: "2025 - 2025",
       achievement: "Passed - Certified",
       type: "certification",
-      logo: './icons/Aws'
+      logo: process.env.PUBLIC_URL + '/udacitylogo.png'
     },
     {
       institution: "MITx (EDX)",
@@ -68,7 +68,7 @@ const Experience = () => {
       duration: "2024 - 2024",
       achievement: "Passed with 85%",
       type: "certification",
-      logo: "/MITx.png"
+      logo: process.env.PUBLIC_URL + '/MITx.png'
     },
     {
       institution: "Udacity",
@@ -77,7 +77,7 @@ const Experience = () => {
       duration: "2024 - 2024",
       achievement: "Passed - Certified",
       type: "certification",
-      logo: "/udacitylogo.png"
+      logo: process.env.PUBLIC_URL + '/udacitylogo.png'
     },
     {
       institution: "Udacity",
@@ -86,7 +86,7 @@ const Experience = () => {
       duration: "2023 - 2023",
       achievement: "Passed - Certified",
       type: "certification",
-      logo: "/udacitylogo.png"
+      logo: process.env.PUBLIC_URL + '/udacitylogo.png'
     }
   ];
 
@@ -224,12 +224,11 @@ const Experience = () => {
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm overflow-hidden">
-                        {item.logo === './icons/Aws' ? (
+                        {item.logo === process.env.PUBLIC_URL + '/udacitylogo.png' ? (
                           <img
-                            src="/udacitylogo.png"
-                            alt="Udacity logo"
+                            src={process.env.PUBLIC_URL + '/udacitylogo.png'}
+                            alt="Udacity Logo"
                             className="w-10 h-10 object-contain"
-                            
                           />
                         ) : item.logo ? (
                           <img
@@ -244,7 +243,7 @@ const Experience = () => {
                         <p className="text-blue-100 font-medium">{item.institution}</p>
                       </div>
                     </div>
-                    {item.logo === './icons/Aws' ? (
+                    {item.logo === process.env.PUBLIC_URL + '/udacitylogo.png' ? (
                       <div className="w-12 h-12 flex items-center justify-center">
                         <Aws className="w-10 h-10" style={{ color: 'black' }} />
                       </div>

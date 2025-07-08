@@ -51,7 +51,7 @@ const About = () => {
           <div>
             <div className="flex justify-center">
               <img 
-                src="/profile.jpg" 
+                src={process.env.PUBLIC_URL + '/profile.jpg'} 
                 alt="Meso Francis profile" 
                 className="rounded-3xl shadow-2xl max-w-xs w-full h-auto object-cover"
               />
