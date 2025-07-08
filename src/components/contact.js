@@ -35,7 +35,7 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('https://contactbackend-30rlta40m-messos-projects.vercel.app/api/contact', {
+      const response = await fetch('https://contactbackend-topaz.vercel.app/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
