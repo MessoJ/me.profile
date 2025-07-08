@@ -31,35 +31,33 @@ const Contact = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
+  e.preventDefault();
+  setIsSubmitting(true);
     try {
-      const response = await fetch('https://contactbackend-topaz.vercel.app/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
+      const response = await fetch('https://contactbackend-fs9718aaw-messos-projects.vercel.app/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
       if (response.ok) {
-        toast({
-          title: "Message Sent!",
-          description: "Thank you for your message. I'll get back to you soon!",
-        });
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      } else {
-        toast({
-          title: "Error",
-          description: "There was a problem sending your message. Please try again later.",
-          variant: "destructive",
-        });
-      }
-    } catch (error) {
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your message. I'll get back to you soon!",
+      });
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } else {
       toast({
         title: "Error",
         description: "There was a problem sending your message. Please try again later.",
         variant: "destructive",
-      });
+       }); 
+     }
+   } catch (error) {
+    toast({
+      title: "Error",
+      description: "There was a problem sending your message. Please try again later.",
+      variant: "destructive",
+     });
     }
     setIsSubmitting(false);
   };
