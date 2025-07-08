@@ -59,7 +59,7 @@
     },
     "scripts": {
         "start": "craco start",
-        "build": "PUBLIC_URL=/me.profile craco build",
+        "build": "cross-env PUBLIC_URL=/me.profile craco build",
         "test": "craco test",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d build"
@@ -80,6 +80,7 @@
         "@craco/craco": "^7.1.0",
         "@eslint/js": "9.23.0",
         "autoprefixer": "^10.4.20",
+        "cross-env": "^7.0.3",
         "eslint": "9.23.0",
         "eslint-plugin-import": "2.31.0",
         "eslint-plugin-jsx-a11y": "6.10.2",
