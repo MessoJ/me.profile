@@ -31,33 +31,35 @@ const Contact = () => {
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  setIsSubmitting(true);
+    e.preventDefault();
+    setIsSubmitting(true);
+
     try {
       const response = await fetch('https://contactbackend-fs9718aaw-messos-projects.vercel.app/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    });
-      if (response.ok) {
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for your message. I'll get back to you soon!",
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    } else {
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for your message. I'll get back to you soon!",
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        toast({
+          title: "Error",
+          description: "There was a problem sending your message. Please try again later.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
       toast({
         title: "Error",
         description: "There was a problem sending your message. Please try again later.",
         variant: "destructive",
-       }); 
-     }
-   } catch (error) {
-    toast({
-      title: "Error",
-      description: "There was a problem sending your message. Please try again later.",
-      variant: "destructive",
-     });
+      });
     }
     setIsSubmitting(false);
   };
@@ -91,19 +93,22 @@ const Contact = () => {
       icon: <Github className="w-6 h-6" />,
       url: "https://github.com/MessoJ",
       color: "hover:bg-gray-100 dark:hover:bg-gray-800",
-      bgColor: "bg-gray-50 dark:bg-gray-900"
+      bgColor: "bg-gray-50 dark:bg-gray-900",
+      name: "GitHub"
     },
     {
       icon: <Linkedin className="w-6 h-6" />,
       url: "https://linkedin.com/in/mesofrancis",
       color: "hover:bg-blue-100 dark:hover:bg-blue-900",
-      bgColor: "bg-blue-50 dark:bg-blue-900"
+      bgColor: "bg-blue-50 dark:bg-blue-900",
+      name: "LinkedIn"
     },
     {
       icon: <X className="w-6 h-6" />,
       url: "https://twitter.com/mesofrancis",
       color: "hover:bg-slate-100 dark:hover:bg-slate-800",
-      bgColor: "bg-slate-50 dark:bg-slate-900"
+      bgColor: "bg-slate-50 dark:bg-slate-900",
+      name: "Twitter"
     }
   ];
 
