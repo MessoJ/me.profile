@@ -99,4 +99,52 @@ I’m staging an intervention. I’ve seen too many good insights buried in bad 
 ### The Chart-Crime Honor Roll:
 1.  **3D Pie Charts**: The fastest way to make simple data impossible to read.
 2.  **Rainbow Color Palettes**: Unless you’re visualizing a unicorn’s dream, just don’t.
-3.  **Dual Y-Axes**
+3.  **Dual Y-Axes**: A classic way to imply a relationship between two unrelated things.
+
+## My Rules for Honest Charts
+
+1.  **One Job, One Chart**: Every chart should have a single, clear message. If it’s getting complicated, use more than one chart.
+2.  **Tell the Truth (and Nothing But)**: Always start your axis at zero. Don’t cherry-pick data to fit your narrative.
+3.  **Clarity Over Clutter**: Ditch the gridlines, borders, and anything else that doesn’t add to the story. Let the data speak for itself.
+
+Good data visualization isn’t about making things look pretty. It’s about telling a clear and honest story. Let’s stop using charts to impress and start using them to inform.`,
+      date: "2024-11-20",
+      readTime: "5 min read",
+      views: "301",
+      category: "Data Visualization",
+      image: "data-visualization.jpg",
+      tags: ["DataViz", "Charts", "BI", "Storytelling"]
+    },
+    {
+      id: 4,
+      slug: "devops-culture-for-high-performing-teams",
+      title: "It’s Not About the Tools: Building a DevOps Culture That Actually Works",
+      excerpt: "You can have all the fancy CI/CD pipelines in the world, but if your teams aren’t collaborating, you’re just going faster in the wrong direction. Here’s how to build a culture of shared ownership.",
+      content: `# It’s Not About the Tools: Building a DevOps Culture That Actually Works
+
+I’ve seen companies spend millions on DevOps tools, only to end up with the same old silos and bottlenecks. Why? Because they forgot the most important ingredient: culture.
+
+## The Pillars of a Strong DevOps Culture
+
+1.  **Shared Ownership**: When developers and operations teams are on the same page, everyone takes responsibility for the entire lifecycle of a product. No more finger-pointing.
+2.  **Blameless Post-Mortems**: When something goes wrong, the goal isn’t to find someone to blame. It’s to understand the root cause and make sure it never happens again.
+3.  **Automate Everything (Almost)**: Automation isn’t just about speed; it’s about consistency. By automating your build, test, and deployment processes, you reduce the risk of human error.
+
+## From “Us vs. Them” to “We”
+
+One of the most successful transformations I was a part of started with a simple rule: developers were now responsible for the code they wrote in production. Suddenly, everyone was a lot more interested in monitoring, logging, and reliability.
+
+It wasn’t easy, but it broke down the walls between teams and created a sense of shared purpose. The result? Faster deployments, fewer outages, and a much happier team.
+
+DevOps is a journey, not a destination. It requires a commitment to continuous improvement, a willingness to experiment, and a whole lot of empathy. But if you get the culture right, the tools will follow.
+`,
+      date: "2024-11-05",
+      readTime: "8 min read",
+      views: "276",
+      category: "DevOps",
+      image: "devops-culture.jpeg",
+      tags: ["DevOps", "Culture", "CI/CD", "Agile"]
+    }
+  ];
+};
+export default Blog;
