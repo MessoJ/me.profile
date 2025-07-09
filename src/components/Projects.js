@@ -9,7 +9,7 @@ const Projects = () => {
     {
       title: "Macro Economic Engine",
       description: "An automated, cloud-native platform that ingests real-time economic data streams, uses unsupervised machine learning to detect statistically significant anomalies, and provides causal inference models for economic forecasting.",
-      image: "https://images.unsplash.com/photo-1655720828018-edd2daec9349",
+      image: process.env.PUBLIC_URL + '/macrecon.jpg',
       technologies: ["Python", "Machine Learning", "Cloud Computing", "Real-time Data", "Anomaly Detection"],
       githubUrl: "https://github.com/MessoJ/macro_econ_engine",
       isPublic: false,
@@ -18,7 +18,7 @@ const Projects = () => {
     {
       title: "Customer Churn Prediction",
       description: "A comprehensive machine learning pipeline for predicting customer churn in telecommunications. The pipeline includes data preprocessing, feature engineering, model training, and deployment with detailed performance analysis.",
-      image: "https://images.unsplash.com/photo-1645352768981-acab045b0742",
+      image: process.env.PUBLIC_URL + '/customer-churn.jpg',
       technologies: ["Python", "Machine Learning", "Data Analysis", "Feature Engineering", "Model Deployment"],
       githubUrl: "https://github.com/messoj/Customer-Churn-Prediction",
       isPublic: true,
@@ -27,7 +27,7 @@ const Projects = () => {
     {
       title: "Data Automation Bot",
       description: "A Python-based bot that automates data preprocessing and reporting, integrating with APIs and SQL databases. This solution has reduced manual effort significantly.",
-      image: "https://images.unsplash.com/photo-1660165458059-57cfb6cc87e5",
+      image: process.env.PUBLIC_URL + '/ai-agent.jpeg',
       technologies: ["Python", "APIs", "SQL", "Automation", "Database Management"],
       githubUrl: "https://github.com/MessoJ/data_automation_bot",
       isPublic: true,
@@ -36,7 +36,7 @@ const Projects = () => {
     {
       title: "Sentiment Analysis Suite",
       description: "A machine learning project implementing three different linear classification algorithms for sentiment analysis of text reviews. Compares performance of Perceptron, Average Perceptron, and Pegasos algorithms.",
-      image: "https://images.pexels.com/photos/16053029/pexels-photo-16053029.jpeg",
+      image: process.env.PUBLIC_URL + '/nlp.png',
       technologies: ["Python", "NLP", "Sentiment Analysis", "Perceptron", "Linear Classification", "Pegasos"],
       githubUrl: "https://github.com/messoj/sentiment-analysis",
       isPublic: true,
