@@ -20,6 +20,7 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const { toast } = useToast();
 
   const handleInputChange = (e) => {
@@ -47,6 +48,7 @@ const Contact = () => {
           description: "Thank you for your message. I'll get back to you soon!",
         });
         setFormData({ name: '', email: '', subject: '', message: '' });
+        setSubmitted(true);
       } else {
         toast({
           title: "Error",
@@ -152,80 +154,89 @@ const Contact = () => {
               </p>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+              {submitted ? (
+                <div className="flex flex-col items-center justify-center py-12">
+                  <svg className="w-16 h-16 text-green-500 mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                  <h3 className="text-2xl font-bold mb-2 text-green-700 dark:text-green-400">Message Sent!</h3>
+                  <p className="text-lg text-muted-foreground mb-4 text-center">Thank you for reaching out. I'll get back to you soon!</p>
+                  <Button className="mt-2" onClick={() => setSubmitted(false)}>Send Another Message</Button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="name" className="text-sm font-semibold">Name</Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        required
+                        placeholder="Your name"
+                        className="h-12 border-2 border-gray-200 focus:border-blue-500 transition-colors"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email" className="text-sm font-semibold">Email</Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
+                        placeholder="your@email.com"
+                        className="h-12 border-2 border-gray-200 focus:border-blue-500 transition-colors"
+                      />
+                    </div>
+                  </div>
+                  
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-sm font-semibold">Name</Label>
+                    <Label htmlFor="subject" className="text-sm font-semibold">Subject</Label>
                     <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
+                      id="subject"
+                      name="subject"
+                      value={formData.subject}
                       onChange={handleInputChange}
                       required
-                      placeholder="Your name"
+                      placeholder="Project discussion, collaboration, etc."
                       className="h-12 border-2 border-gray-200 focus:border-blue-500 transition-colors"
                     />
                   </div>
+                  
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-sm font-semibold">Email</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
+                    <Label htmlFor="message" className="text-sm font-semibold">Message</Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
                       onChange={handleInputChange}
                       required
-                      placeholder="your@email.com"
-                      className="h-12 border-2 border-gray-200 focus:border-blue-500 transition-colors"
+                      placeholder="Tell me about your project or what you'd like to discuss..."
+                      rows={6}
+                      className="border-2 border-gray-200 focus:border-blue-500 transition-colors resize-none"
                     />
                   </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="subject" className="text-sm font-semibold">Subject</Label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    required
-                    placeholder="Project discussion, collaboration, etc."
-                    className="h-12 border-2 border-gray-200 focus:border-blue-500 transition-colors"
-                  />
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="message" className="text-sm font-semibold">Message</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    placeholder="Tell me about your project or what you'd like to discuss..."
-                    rows={6}
-                    className="border-2 border-gray-200 focus:border-blue-500 transition-colors resize-none"
-                  />
-                </div>
-                
-                <Button 
-                  type="submit" 
-                  className="w-full h-14 text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-300"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? (
-                    <>
-                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3" />
-                      Sending Message...
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-5 h-5 mr-3" />
-                      Send Message
-                    </>
-                  )}
-                </Button>
-              </form>
+                  
+                  <Button 
+                    type="submit" 
+                    className="w-full h-14 text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-300"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3" />
+                        Sending Message...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-5 h-5 mr-3" />
+                        Send Message
+                      </>
+                    )}
+                  </Button>
+                </form>
+              )}
             </CardContent>
           </Card>
 

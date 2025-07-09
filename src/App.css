@@ -32,3 +32,56 @@
         transform: rotate(360deg);
     }
 }
+
+/* Mac-style code terminal frame for blog code snippets */
+.code-terminal-frame {
+  background: #23272e;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.12);
+  margin-bottom: 2rem;
+  overflow: hidden;
+  border: 1px solid #2d3748;
+}
+.code-terminal-header {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: #1a1e23;
+  border-bottom: 1px solid #2d3748;
+  position: relative;
+}
+.code-terminal-header .dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 0.4rem;
+}
+.code-terminal-header .dot.red { background: #ff5f56; }
+.code-terminal-header .dot.yellow { background: #ffbd2e; }
+.code-terminal-header .dot.green { background: #27c93f; }
+.code-terminal-title {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-left: 1rem;
+  letter-spacing: 0.05em;
+}
+.code-terminal-block {
+  background: #23272e;
+  color: #e2e8f0;
+  font-family: 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+  font-size: 1rem;
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  border-radius: 0 0 0.75rem 0.75rem;
+  margin: 0;
+}
+.inline-code {
+  background: #23272e;
+  color: #facc15;
+  padding: 0.15em 0.4em;
+  border-radius: 0.3em;
+  font-size: 0.95em;
+  font-family: 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+}
