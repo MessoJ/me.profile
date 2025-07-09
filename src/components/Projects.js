@@ -20,7 +20,7 @@ const Projects = () => {
       description: "A comprehensive machine learning pipeline for predicting customer churn in telecommunications. The pipeline includes data preprocessing, feature engineering, model training, and deployment with detailed performance analysis.",
       image: "https://images.unsplash.com/photo-1645352768981-acab045b0742",
       technologies: ["Python", "Machine Learning", "Data Analysis", "Feature Engineering", "Model Deployment"],
-      githubUrl: "https://github.com/mesofrancis/Customer-Churn-Prediction",
+      githubUrl: "https://github.com/messoj/Customer-Churn-Prediction",
       isPublic: true,
       license: "MIT License"
     },
@@ -38,7 +38,7 @@ const Projects = () => {
       description: "A machine learning project implementing three different linear classification algorithms for sentiment analysis of text reviews. Compares performance of Perceptron, Average Perceptron, and Pegasos algorithms.",
       image: "https://images.pexels.com/photos/16053029/pexels-photo-16053029.jpeg",
       technologies: ["Python", "NLP", "Sentiment Analysis", "Perceptron", "Linear Classification", "Pegasos"],
-      githubUrl: "https://github.com/mesofrancis/sentiment-analysis",
+      githubUrl: "https://github.com/messoj/sentiment-analysis",
       isPublic: true,
       license: "MIT License"
     }

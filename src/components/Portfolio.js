@@ -5,7 +5,6 @@ import About from './About';
 import Skills from './Skills';
 import Projects from './Projects';
 import Experience from './Experience';
-import Blog from './Blog';
 import Contact from './contact';
 import Footer from './Footer';
 
@@ -19,7 +18,7 @@ const Portfolio = () => {
         <Skills />
         <Projects />
         <Experience />
-        <Blog />
+        {/* <Blog /> */}
         <Contact />
       </main>
       <Footer />
