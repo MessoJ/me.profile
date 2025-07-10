@@ -48,7 +48,7 @@ const Experience = () => {
       degree: "Bachelor of Economics & Statistics",
       location: "Nairobi, Kenya",
       duration: "2020 - 2024",
-      achievement: "Graduated Cum Laude (GPA: 3.7/4.0)",
+      achievement: "Cum Laude",
       type: "degree",
       logo: process.env.PUBLIC_URL + '/UoNlogo.png'
     },
