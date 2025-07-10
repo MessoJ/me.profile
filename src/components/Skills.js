@@ -103,12 +103,12 @@ const Skills = () => {
 
   const keyHighlights = [
     {
-      title: "4+ Years",
+      title: "2 Years",
       description: "Experience in Data Science & ML",
       icon: "📊"
     },
     {
-      title: "15+ Projects",
+      title: "10+ Projects",
       description: "Successfully Completed",
       icon: "🚀"
     },
@@ -118,7 +118,7 @@ const Skills = () => {
       icon: "💻"
     },
     {
-      title: "3.7 GPA",
+      title: "Cum Laude",
       description: "Academic Excellence",
       icon: "🎓"
     }

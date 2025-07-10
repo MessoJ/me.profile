@@ -18,8 +18,16 @@ const Hero = () => {
   };
 
   const handleDownloadCV = () => {
-    // Mock download functionality
-    alert('CV download functionality will be implemented with backend integration');
+    // Create a link element to trigger download
+    const link = document.createElement('a');
+    link.href = process.env.PUBLIC_URL + '/resume.pdf';
+    link.download = 'Meso_Francis_Resume.pdf';
+    link.target = '_blank';
+    
+    // Append to body, click, and remove
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (

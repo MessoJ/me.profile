@@ -321,6 +321,20 @@ const Contact = () => {
                     </div>
                   ))}
                 </div>
+                <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+                  <Button 
+                    onClick={() => {
+                      document.getElementById('contact').scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                      });
+                    }}
+                    className="w-full h-12 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <MessageCircle className="w-5 h-5 mr-2" />
+                    Send Me a Message
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>

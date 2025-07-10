@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meso Francis - Resume</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 10px 10px 0 10px;
+            background: white;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 12px;
+            margin-bottom: 18px;
+        }
+        .name {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #1e40af;
+            margin-bottom: 6px;
+        }
+        .title {
+            font-size: 1.1em;
+            color: #64748b;
+            margin-bottom: 10px;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            font-size: 0.9em;
+            color: #64748b;
+        }
+        .section {
+            margin-bottom: 16px;
+        }
+        .section-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #1e40af;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 2px;
+            margin-bottom: 8px;
+        }
+        .job {
+            margin-bottom: 10px;
+        }
+        .job-title {
+            font-weight: bold;
+            font-size: 1em;
+            color: #374151;
+        }
+        .job-company {
+            color: #6b7280;
+            font-style: italic;
+        }
+        .job-date {
+            color: #9ca3af;
+            font-size: 0.9em;
+        }
+        .job-description {
+            margin-top: 6px;
+        }
+        .job-description ul {
+            margin: 3px 0;
+            padding-left: 18px;
+        }
+        .job-description li {
+            margin-bottom: 3px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+        }
+        .skill-category {
+            background: #f8fafc;
+            padding: 10px;
+            border-radius: 6px;
+            border-left: 3px solid #2563eb;
+        }
+        .skill-category h4 {
+            margin: 0 0 6px 0;
+            color: #1e40af;
+            font-size: 0.98em;
+        }
+        .skill-category ul {
+            margin: 0;
+            padding-left: 16px;
+            font-size: 0.9em;
+        }
+        .education-item {
+            margin-bottom: 8px;
+        }
+        .education-degree {
+            font-weight: bold;
+            color: #374151;
+        }
+        .education-school {
+            color: #6b7280;
+        }
+        .education-details {
+            color: #9ca3af;
+            font-size: 0.9em;
+        }
+        .project {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: #f8fafc;
+            border-radius: 6px;
+            border-left: 3px solid #10b981;
+        }
+        .project-title {
+            font-weight: bold;
+            color: #374151;
+            margin-bottom: 3px;
+        }
+        .project-description {
+            margin-bottom: 6px;
+        }
+        .project-tech {
+            font-size: 0.9em;
+            color: #6b7280;
+            font-style: italic;
+        }
+        ul {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        @media print {
+            body {
+                margin: 0;
+                padding: 8px 8px 0 8px;
+            }
+            .section {
+                page-break-inside: avoid;
+                margin-bottom: 10px;
+            }
+            .header {
+                margin-bottom: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="name">MESO FRANCIS</div>
+        <div class="title">Machine Learning Engineer & Data Scientist</div>
+        <div class="contact-info">
+            <span>📧 mesofrancis@outlook.com</span>
+            <span>📱 +1 (210) 926-1190</span>
+            <span>📍 Dallas, TX</span>
+            <span>🔗 linkedin.com/in/mesofrancis</span>
+            <span>💻 github.com/MessoJ</span>
+            <span>🌐 messo.me</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">PROFESSIONAL SUMMARY</div>
+        <p>
+            Passionate Machine Learning Engineer and Data Scientist with 2+ years of experience transforming 
+            raw business problems into intelligent AI solutions. Specialized in end-to-end ML engineering, 
+            data automation, and scalable cloud-native systems. Proven track record of delivering 92%+ 
+            accuracy in predictive models and reducing manual data processing by 75%. Skilled in Python, 
+            AWS, React.js, and building production-ready ML pipelines that drive real business impact.
+        </p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">TECHNICAL SKILLS</div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>Programming Languages</h4>
+                <ul>
+                    <li>Python, JavaScript (ES6+), SQL, R</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Machine Learning & Statistics</h4>
+                <ul>
+                    <li>Pandas, NumPy, Scikit-learn, Statsmodels</li>
+                    <li>XGBoost, LightGBM, Unsupervised Anomaly Detection</li>
+                    <li>EconML, Causal Inference, Comparative Model Evaluation</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Cloud & DevOps</h4>
+                <ul>
+                    <li>AWS (IAM, S3, Lambda, API Gateway, RDS, CloudWatch)</li>
+                    <li>Docker, GitHub Actions, AWS SAM, CloudFormation</li>
+                    <li>Infrastructure as Code (IaC), Serverless Architecture</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Backend & Data Engineering</h4>
+                <ul>
+                    <li>FastAPI, boto3, Real-Time Data Pipelines</li>
+                    <li>API Design & Implementation, Event-Driven Architecture</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Databases & Visualization</h4>
+                <ul>
+                    <li>PostgreSQL (AWS RDS), Time-Series Data Modeling</li>
+                    <li>Streamlit, Plotly Dash, Interactive Dashboards</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Frontend & Tools</h4>
+                <ul>
+                    <li>React.js, HTML5 & CSS3, Tailwind CSS</li>
+                    <li>Git, Version Control, Automated Testing & CI/CD</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">PROFESSIONAL EXPERIENCE</div>
+        
+        <div class="job">
+            <div class="job-title">Machine Learning Engineer</div>
+            <div class="job-company">Freelance | Aug 2024 - Present</div>
+            <div class="job-date">Remote</div>
+            <div class="job-description">
+                <ul>
+                    <li>Transform raw business problems into working AI tools, starting with client needs analysis and building end-to-end solutions from React dashboards to Python-powered ML systems</li>
+                    <li>Turned manual spreadsheet processes into one-click reports using React + Python tools, saving 4+ clients 75% time and eliminating Excel-based workflows</li>
+                    <li>Built 92%-accurate churn detection model that spots at-risk customers before they leave, implementing real-time prediction systems</li>
+                    <li>Transformed chaotic data into beautiful, living dashboards with React visualizations that make real-time insights accessible</li>
+                    <li>Developed automation bot that cuts data preprocessing time by 75%, providing clients with 10+ extra productive hours daily</li>
+                    <li>Open-sourced Fortune 500-grade prediction engine to share great tools with the community</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-title">Data Science Intern</div>
+            <div class="job-company">Accenture | Jun 2024 - Nov 2024</div>
+            <div class="job-date">Remote</div>
+            <div class="job-description">
+                <ul>
+                    <li>Built Python/SQL systems for customer churn prediction and sentiment analysis using specialized classifiers, teaching computers to understand human behavior patterns</li>
+                    <li>Optimized sluggish ETL workflows on AWS/Azure, making data processing 30% faster and giving teams back a full workday each week</li>
+                    <li>Designed Tableau/Power BI dashboards with counterfactual explanations showing not just predictions but why models made decisions</li>
+                    <li>Partnered with engineers and consultants to transform technical solutions into client strategies, playing key roles in 3+ projects where data directly shaped business roadmaps</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">EDUCATION</div>
+        
+        <div class="education-item">
+            <div class="education-degree">Bachelor of Economics & Statistics</div>
+            <div class="education-school">University of Nairobi | 2020 - 2024</div>
+            <div class="education-details">Graduated Cum Laude (GPA: 3.7/4.0) | Relevant Coursework: Statistical Analysis, Econometrics, Data Science, Machine Learning</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">CERTIFICATIONS</div>
+        <ul>
+            <li>AWS Machine Learning Fundamentals - Udacity (2025)</li>
+            <li>Machine Learning with Python: Linear Models to Deep Learning - MITx (EDX) (2024)</li>
+            <li>AI Programming with Python - Udacity (2024)</li>
+            <li>Business Analytics - Udacity (2023)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <div class="section-title">KEY PROJECTS</div>
+        
+        <div class="project">
+            <div class="project-title">Macro Economic Engine</div>
+            <div class="project-description">
+                Automated, cloud-native platform that ingests real-time economic data streams, uses unsupervised machine learning 
+                to detect statistically significant anomalies, and provides causal inference models for economic forecasting.
+            </div>
+            <div class="project-tech">Technologies: Python, Machine Learning, Cloud Computing, Real-time Data, Anomaly Detection</div>
+        </div>
+
+        <div class="project">
+            <div class="project-title">Customer Churn Prediction</div>
+            <div class="project-description">
+                Comprehensive machine learning pipeline for predicting customer churn in telecommunications with 92% accuracy. 
+                Includes data preprocessing, feature engineering, model training, and deployment with detailed performance analysis.
+            </div>
+            <div class="project-tech">Technologies: Python, Machine Learning, Data Analysis, Feature Engineering, Model Deployment</div>
+        </div>
+
+        <div class="project">
+            <div class="project-title">Data Automation Bot</div>
+            <div class="project-description">
+                Python-based bot that automates data preprocessing and reporting, integrating with APIs and SQL databases. 
+                Reduced manual effort by 75% and provides clients with 10+ extra productive hours daily.
+            </div>
+            <div class="project-tech">Technologies: Python, APIs, SQL, Automation, Database Management</div>
+        </div>
+
+        <div class="project">
+            <div class="project-title">Sentiment Analysis Suite</div>
+            <div class="project-description">
+                Machine learning project implementing three different linear classification algorithms for sentiment analysis 
+                of text reviews. Compares performance of Perceptron, Average Perceptron, and Pegasos algorithms.
+            </div>
+            <div class="project-tech">Technologies: Python, NLP, Sentiment Analysis, Perceptron, Linear Classification, Pegasos</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">LEADERSHIP & COMMUNITY</div>
+        <ul>
+            <li>Open source contributor sharing Fortune 500-grade prediction engines and tools with the community</li>
+            <li>Passionate about making AI accessible to everyone through knowledge sharing and collaboration</li>
+            <li>Committed to lifelong learning and staying updated with latest ML/AI research and technologies</li>
+            <li>Mentoring aspiring data scientists and contributing to open-source projects</li>
+        </ul>
+    </div>
+</body>
+</html> 

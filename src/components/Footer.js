@@ -25,6 +25,7 @@ const Footer = () => {
     { name: 'Skills', id: 'skills' },
     { name: 'Projects', id: 'projects' },
     { name: 'Contact', id: 'contact' }
+    // { name: 'Blog', id: 'blog' }, // Blog link commented out for now
   ];
 
   const socialLinks = [
