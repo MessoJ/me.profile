@@ -236,7 +236,7 @@ const Skills = () => {
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 As a machine learning engineer, I believe in continuous growth and expanding my skill set. 
                 While my expertise lies in data science and ML engineering, I'm actively developing my frontend 
-                skills to build better user interfaces for data applications and create more comprehensive solutions.
+                skills to build better user interfaces for data applications and create more solutions.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">

@@ -65,8 +65,7 @@ const Hero = () => {
               Machine Learning Engineer & Data Scientist
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Transforming data into intelligent solutions. Specializing in machine learning, 
-              automation, and scalable data systems that drive impact.
+              I develop data-driven solutions using machine learning, automation, and scalable data systems.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">

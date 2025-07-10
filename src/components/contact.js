@@ -100,7 +100,7 @@ const Contact = () => {
     },
     {
       icon: <Linkedin className="w-6 h-6" />,
-      url: "https://linkedin.com/in/mesofrancis",
+      url: "https://linkedin.com/in/meso-francis-0345641b9",
       color: "hover:bg-blue-100 dark:hover:bg-blue-900",
       bgColor: "bg-blue-50 dark:bg-blue-900",
       name: "LinkedIn"

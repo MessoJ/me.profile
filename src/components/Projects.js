@@ -17,7 +17,7 @@ const Projects = () => {
     },
     {
       title: "Customer Churn Prediction",
-      description: "A comprehensive machine learning pipeline for predicting customer churn in telecommunications. The pipeline includes data preprocessing, feature engineering, model training, and deployment with detailed performance analysis.",
+      description: "A machine learning pipeline for predicting customer churn in telecommunications. The pipeline includes data preprocessing, feature engineering, model training, and deployment with detailed performance analysis.",
       image: process.env.PUBLIC_URL + '/customer-churn.jpg',
       technologies: ["Python", "Machine Learning", "Data Analysis", "Feature Engineering", "Model Deployment"],
       githubUrl: "https://github.com/messoj/Customer-Churn-Prediction",
@@ -48,7 +48,7 @@ const Projects = () => {
     if (isPublic) {
       window.open(url, '_blank');
     } else {
-      alert('This is a private repository. Access may be restricted.');
+      alert('This is a private repository. Access is restricted.');
     }
   };
 
@@ -65,7 +65,7 @@ const Projects = () => {
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
           <em>
-            I build AI tools that don’t just work – they delight. From sketching React interfaces to teaching Python models new tricks, I craft cloud-based systems that turn data headaches into 'aha!' moments for clients
+            I build AI tools that don't just work - they delight. From sketching React interfaces to teaching Python models new tricks, I craft cloud-based systems that turn data headaches into 'aha!' moments for clients.
           </em>
           </p>
         </div>

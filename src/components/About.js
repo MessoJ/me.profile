@@ -11,22 +11,22 @@ const About = () => {
     {
       icon: <Rocket5 className="w-6 h-6" />,
       title: "End-to-End ML Engineering",
-      description: "From raw data to deployed models, I build robust, scalable machine learning pipelines tailored to real business needs."
+      description: "From raw data to deployed models, I build robust, scalable machine learning pipelines for business needs."
     },
     {
       icon: <Database2 className="w-6 h-6" />,
       title: "Data Automation & Analytics",
-      description: "Automating data collection, cleaning, and analysis to empower smarter, faster decision-making."
+      description: "Automating data collection, cleaning, and analysis to support decision-making."
     },
     {
       icon: <Brain className="w-6 h-6" />,
       title: "AI for Good",
-      description: "Applying machine learning to solve impactful problems and make technology accessible to all."
+      description: "Applying machine learning to address practical problems."
     },
     {
       icon: <Sun1 className="w-6 h-6" />,
-      title: "Lifelong Learning & Mentorship",
-      description: "Committed to growth, sharing knowledge, and helping others succeed in the data science community."
+      title: "Continuous Learning & Mentorship",
+      description: "Focused on growth, sharing knowledge, and supporting others in the data science community."
     }
   ];
 
@@ -42,8 +42,7 @@ const About = () => {
             <span className="bg-gradient-to-r from-gray-800 via-blue-900 via-blue-500 to-cyan-400 bg-clip-text text-transparent"> Intelligence</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Passionate about leveraging machine learning and data science to solve complex problems 
-            and drive innovation across industries.
+            I use machine learning and data science to solve complex problems and develop new solutions across industries.
           </p>
         </div>
 
@@ -62,13 +61,13 @@ const About = () => {
             <h3 className="text-2xl font-bold mb-6">My Story</h3>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Hi! I'm Meso Francis—a Machine Learning Engineer and Data Scientist who's genuinely excited about building smart systems that make a real difference. My journey started with a simple curiosity about how data shapes our world, and it's grown into a career focused on solving meaningful, real-world problems with technology.
+                Hi! I'm Meso Francis—a Machine Learning Engineer and Data Scientist focused on building smart systems that address real-world problems. My journey started with curiosity about how data shapes our world, and it's grown into a career using technology to solve practical challenges.
               </p>
               <p>
-                I love designing and deploying end-to-end machine learning solutions, from wrangling raw data to launching models in production. I've worked across different industries, helping teams unlock the true value of their data and spark innovation.
+                I design and deploy end-to-end machine learning solutions, from wrangling raw data to launching models in production. I've worked across different industries, helping teams use their data to improve processes and outcomes.
               </p>
               <p>
-                For me, learning never stops. I'm passionate about sharing knowledge, collaborating openly, and making AI accessible to everyone. When I'm not working, you'll find me exploring new research, mentoring aspiring data scientists, or contributing to open-source projects.
+                I value continuous learning, sharing knowledge, collaborating openly, and supporting others in the data science community. Outside of work, I explore new research, mentor aspiring data scientists, and contribute to open-source projects.
               </p>
             </div>
           </div>

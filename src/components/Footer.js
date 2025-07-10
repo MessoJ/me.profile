@@ -38,7 +38,7 @@ const Footer = () => {
     { 
       icon: <Linkedin className="w-5 h-5" fill="currentColor" />, 
       name: "LinkedIn",
-      url: "https://linkedin.com/in/mesofrancis",
+      url: "https://linkedin.com/in/meso-francis-0345641b9",
       hoverColor: "hover:bg-blue-100 hover:text-blue-700 dark:hover:bg-blue-900 dark:hover:text-blue-300"
     },
     { 
